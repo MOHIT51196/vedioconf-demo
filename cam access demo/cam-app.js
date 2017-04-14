@@ -50,17 +50,19 @@ function generateSnapBtn() {
 
 function findLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (pos) {
-            var lon = pos.coords.longitude;
-            var lat = pos.coords.latitude;
-            console.log('Latitude : ' + lat + '\n\nLongitude : ' + lon);
-            context.font = '20px monospace'
-            context.fillStyle = 'red';
-            context.fillText('LATITUDE : ' + lat, 40, 25);
-            context.fillText('LATITUDE : ' + lon, 40, 60);
-        });
+        navigator.geolocation.getCurrentPosition(showLocation);
     }
     else {
         alert('Your browser doesnt support Geolocation');
     }
+}
+
+function showLocation(pos) {
+    var lng = pos.coords.longitude;
+    var lat = pos.coords.latitude;
+    console.log('Latitude : ' + lat + '\n\nLongitude : ' + lng);
+    context.font = '20px monospace'
+    context.fillStyle = 'red';
+    context.fillText('LATITUDE : ' + lat, 40, 25);
+    context.fillText('LATITUDE : ' + lng, 40, 60);
 }
