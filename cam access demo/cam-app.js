@@ -5,6 +5,7 @@ window.addEventListener('load', function () {
     video = document.getElementById('video');
     canvas = document.getElementById('canvas');
     context = canvas.getContext('2d');
+    
     //setting onclick listeners to the control buttons
     document.getElementById('startBt').addEventListener('click', startApp);
 });

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>P2P Video Chat</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        form {
+            margin-top: 10%;
+            text-align: center;
+        }
+        
+        label {
+            margin: 2px 10px;
+            font: 25px monospace;
+            color: cornsilk;
+        }
+        
+        fieldset {
+            margin: 20px 0;
+            border: 1px solid #fff;
+        }
+        
+        legend {
+            color: cornsilk;
+            font: 25px monospace;
+        }
+        
+        input[type="text"] {
+            font: 20px monospace;
+            border-radius: 10%;
+        }
+        
+        input#userid {
+            margin-right: 30px;
+        }
+        
+        input[type="submit"] {
+            margin-top: 50px;
+            padding: 10px 14px;
+            font: 20px monospace;
+            background-color: crimson;
+            color: cornsilk;
+            border-style: none;
+            border-radius: 20%;
+        }
+        
+        #contacts {
+            display: block;
+            text-align: center;
+            color: cornsilk;
+            font: 20px monospace;
+        }
+        
+        video {
+            width: 320px;
+            height: 240px;
+            padding: 10px;
+        }
+        
+        #video-frame {
+            display: flex;
+            margin: 20px 0;
+            justify-content: space-around;
+            border: 1px solid #fff;
+        }
+    </style>
+    <script src="simplepeer.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <label id="userid-lbl">YOUR USER ID</label>
+            <input type="text" id="userid" placeholder="Enter your unique id here" autofocus>
+            <label id="frndid-lbl">YOUR PEER'S ID</label>
+            <input type="text" id="frndid" placeholder="Enter the peer's id here">
+            <br>
+            <input type="submit" id="start-chat" value="Start Chat"> </form>
+        <div id="video-frame">
+            <video id="user-video"></video>
+            <video id="frnd-video"></video>
+        </div>
+        <fieldset>
+            <legend>Contact List</legend>
+            <div id="contact-list"></div>
+        </fieldset>
+    </div>
+</body>
+
+</html>
